@@ -59,6 +59,19 @@ nav {
   background-color: #7d7d7d;
 }
 
+#my-boards {
+  padding: 10px;
+  background-color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10px;
+  color: white;
+  text-transform: uppercase;
+}
+
+#my-boards:hover {
+  background-color: #7d7d7d;
+}
+
 #new-board {
   padding: 10px;
   background-color: black;

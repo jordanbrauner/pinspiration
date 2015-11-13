@@ -1,6 +1,6 @@
 class PinsController < ApplicationController
 
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:new, :show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
@@ -16,13 +16,14 @@ class PinsController < ApplicationController
   end
 
   def new
-    @pin = Pin.new
+    @pin = current_user.pins.new
   end
 
   def create
+    @board = Board.find(params[:id])
     @pin = current_user.pins.new(pin_params)
     if @pin.save
-      redirect_to pins_path
+      redirect_to user_board_path(@user, @board)
     else
       render 'new'
     end
@@ -45,7 +46,7 @@ class PinsController < ApplicationController
   end
 
   def set_post
-    @pin = Pin.find(params[:id])
+    @user = current_user
   end
 
   private

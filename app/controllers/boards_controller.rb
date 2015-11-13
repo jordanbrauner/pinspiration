@@ -13,6 +13,7 @@ class BoardsController < ApplicationController
 
   def show
     @user = current_user
+    @board = Board.find(params[:id])
   end
 
   def new
@@ -34,16 +35,22 @@ class BoardsController < ApplicationController
   end
 
   def update
+    if @board.update(board_params)
+      redirect_to user_boards_path(@user)
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+    @board.destroy
+    redirect_to user_boards_path(@user)
   end
 
   def set_post
     @board = Board.find(params[:id])
+    @user = current_user
   end
-
-
 
   private
     def board_params
