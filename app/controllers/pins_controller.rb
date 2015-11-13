@@ -4,8 +4,8 @@ class PinsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
+    @user = current_user
     if current_user
-      @my_pins = current_user.pins
       @pins = Pin.all #TODO Add filter to remove user's pins
     else
       @pins = Pin.all
@@ -13,21 +13,20 @@ class PinsController < ApplicationController
   end
 
   def show
-    @pin = Pin.find(params[:id])
+    @user = current_user
+    @pin = @user.pins.find(params[:pin_id])
   end
 
   def new
     @user = current_user
-    @board = Board.find(params[:board_id])
-    @pin = @user.boards.pins.new
+    @pin = @user.pins.new
   end
 
   def create
     @user = current_user
-    @board = Board.find(params[:board_id])
-    @pin = current_user.boards.pins.new(pin_params)
+    @pin = current_user.pins.new(pin_params)
     if @pin.save
-      redirect_to user_board_path(@user, @board)
+      redirect_to pins_path
     else
       render 'new'
     end
