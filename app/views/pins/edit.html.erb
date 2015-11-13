@@ -1,3 +1,5 @@
 <h2>Edit Pin</h2>
 
 <%= render 'form' %>
+
+<%= link_to 'Delete Pin', pin_path(@pin), method: :delete, data: { confirm: 'Are you sure?' } %>
