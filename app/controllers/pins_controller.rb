@@ -1,11 +1,18 @@
 class PinsController < ApplicationController
 
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+
   def index
-    @pins = Pin.all
+    if current_user
+      @my_pins = current_user.pins
+      @pins = Pin.all #TODO Add filter to remove user's pins
+    else
+      @pins = Pin.all
+    end
   end
 
   def show
-    @pin = Pin.find(params[:id])
   end
 
   def new
@@ -13,7 +20,7 @@ class PinsController < ApplicationController
   end
 
   def create
-    @pin = Pin.new(pin_params)
+    @pin = current_user.pins.new(pin_params)
     if @pin.save
       redirect_to pins_path
     else
@@ -22,11 +29,9 @@ class PinsController < ApplicationController
   end
 
   def edit
-    @pin = Pin.find(params[:id])
   end
 
   def update
-    @pin = Pin.find(params[:id])
     if @pin.update(pin_params)
       redirect_to @pin
     else
@@ -35,9 +40,12 @@ class PinsController < ApplicationController
   end
 
   def destroy
-    @pin = Pin.find(params[:id])
     @pin.destroy
     redirect_to pins_path
+  end
+
+  def set_post
+    @pin = Pin.find(params[:id])
   end
 
   private
