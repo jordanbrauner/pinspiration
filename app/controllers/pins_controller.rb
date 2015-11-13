@@ -18,13 +18,14 @@ class PinsController < ApplicationController
 
   def new
     @user = current_user
-    @pin = current_user.pins.new
+    @board = Board.find(params[:board_id])
+    @pin = @user.boards.pins.new
   end
 
   def create
     @user = current_user
-    @board = Board.find(params[:id])
-    @pin = current_user.pins.new(pin_params)
+    @board = Board.find(params[:board_id])
+    @pin = current_user.boards.pins.new(pin_params)
     if @pin.save
       redirect_to user_board_path(@user, @board)
     else
