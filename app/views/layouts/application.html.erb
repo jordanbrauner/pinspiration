@@ -6,9 +6,10 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= yield %>
-
-</body>
+  <body>
+    <h1><%=link_to "Pinspiration", pins_path%></h1>
+    <nav>
+    </nav>
+    <%= yield %>
+  </body>
 </html>
