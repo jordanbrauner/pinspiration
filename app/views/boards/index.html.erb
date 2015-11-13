@@ -1,0 +1,7 @@
+<div id="board-container">
+  <% @boards.each do |board| %>
+    <div class="board">
+      <%= link_to board.title, user_board_path(@user, board), class: "board-title" %>
+    </div>
+  <% end %>
+</div>

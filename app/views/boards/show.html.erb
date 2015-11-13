@@ -1,0 +1,8 @@
+<div id="board-container">
+  <% @board.pins.each do |pin| %>
+    <div class="board">
+      <%= link_to image_tag( pin.image_url ), pin_path(pin) %>
+      <%= link_to pin.title, pin_path(pin), class: "board-title" %>
+    </div>
+  <% end %>
+</div>

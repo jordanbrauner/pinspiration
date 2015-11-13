@@ -59,6 +59,19 @@ nav {
   background-color: #7d7d7d;
 }
 
+#new-board {
+  padding: 10px;
+  background-color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10px;
+  color: white;
+  text-transform: uppercase;
+}
+
+#new-board:hover {
+  background-color: #7d7d7d;
+}
+
 #login {
   padding: 10px;
   background-color: black;
@@ -101,6 +114,27 @@ nav {
 
 
 /*****************
+BOARD STYLES
+*****************/
+
+#board-container {
+  padding-top: 50px;
+}
+
+.board {
+  vertical-align: top;
+  background-color: white;
+  padding-bottom: 30px;
+  box-shadow: 0px 3px 7px #c3c3c3;
+  margin: 0 10px 30px 0;
+  display: inline-block;
+  /*height: 350px;*/
+  width: 250px;
+}
+
+
+
+/*****************
 PIN STYLES
 *****************/
 
@@ -121,6 +155,10 @@ PIN STYLES
   display: inline-block;
   /*height: 350px;*/
   width: 250px;
+}
+
+.pin:hover {
+  box-shadow: 0px 3px 12px #a7a7a7;
 }
 
 .pin-title {
