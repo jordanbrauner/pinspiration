@@ -47,8 +47,11 @@ nav {
 }
 
 #new-pin {
+  position: absolute;
+  top: 155px;
+  right: 100px;
   padding: 10px;
-  background-color: black;
+  background-color: red;
   font-family: 'Open Sans', sans-serif;
   font-size: 10px;
   color: white;
@@ -141,11 +144,26 @@ BOARD STYLES
   box-shadow: 0px 3px 7px #c3c3c3;
   margin: 0 10px 30px 0;
   display: inline-block;
-  /*height: 350px;*/
+  height: 250px;
   width: 250px;
 }
 
+.board:hover {
+  opacity: .75;
+}
 
+.board-title {
+  margin: 0 0 0 15px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.board-photo {
+  background-color: #7d7d7d;
+  height: 220px;
+  width: 100%;
+}
 
 /*****************
 PIN STYLES
@@ -171,7 +189,7 @@ PIN STYLES
 }
 
 .pin:hover {
-  box-shadow: 0px 3px 12px #a7a7a7;
+  opacity: .75;
 }
 
 .pin-title {

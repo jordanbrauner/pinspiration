@@ -13,13 +13,16 @@ class PinsController < ApplicationController
   end
 
   def show
+    @pin = Pin.find(params[:id])
   end
 
   def new
+    @user = current_user
     @pin = current_user.pins.new
   end
 
   def create
+    @user = current_user
     @board = Board.find(params[:id])
     @pin = current_user.pins.new(pin_params)
     if @pin.save
