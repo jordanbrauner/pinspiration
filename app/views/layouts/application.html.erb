@@ -5,14 +5,15 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=Dancing+Script|Open+Sans:400,300,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
 </head>
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <h1><%=link_to "Pinspiration", pins_path%></h1>
+    <h1><%=link_to "Pinspiration", pins_path, id: "logo" %></h1>
     <nav>
       <% if current_user %>
-        <%= link_to "New Pin", new_pin_path %>
+        <%= link_to "New Pin", new_pin_path, id: "new-pin" %>
         <%= link_to 'Signout', destroy_user_session_path, :method => :delete, id: "signout" %>
       <% else %>
         <%= link_to 'Signup', new_user_registration_path, id: "signup" %>

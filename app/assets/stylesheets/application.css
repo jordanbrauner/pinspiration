@@ -16,9 +16,116 @@
 
 
 /*****************
+CORE STYLES
+*****************/
+
+body {
+  background-color: #efefef;
+  /*padding-top: 30px;*/
+  margin: 65px 100px 0 70px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
+
+/*****************
+NAV
+*****************/
+
+nav {
+  border-top: 1px solid #4d4d4d;
+  padding-top: 20px;
+}
+
+#logo {
+  font-size: 45px;
+  font-family: 'Dancing Script', cursive;
+}
+
+#new-pin {
+  padding: 10px;
+  background-color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10px;
+  color: white;
+  text-transform: uppercase;
+}
+
+#new-pin:hover {
+  background-color: #7d7d7d;
+}
+
+#login {
+  padding: 10px;
+  background-color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10px;
+  color: white;
+  text-transform: uppercase;
+}
+
+#login:hover {
+  background-color: #7d7d7d;
+}
+
+#signout {
+  padding: 10px;
+  background-color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10px;
+  color: white;
+  text-transform: uppercase;
+}
+
+#signout:hover {
+  background-color: #7d7d7d;
+}
+
+#signup {
+  padding: 10px;
+  background-color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10px;
+  color: white;
+  text-transform: uppercase;
+}
+
+#signup:hover {
+  background-color: #7d7d7d;
+}
+
+
+
+/*****************
 PIN STYLES
 *****************/
 
+#pin-container {
+  padding-top: 50px;
+}
+
 .pin img {
-  width: 75px;
+  width: 100%
+}
+
+.pin {
+  vertical-align: top;
+  background-color: white;
+  padding-bottom: 30px;
+  box-shadow: 0px 3px 7px #c3c3c3;
+  margin: 0 10px 30px 0;
+  display: inline-block;
+  /*height: 350px;*/
+  width: 250px;
+}
+
+.pin-title {
+  margin: 0 0 0 15px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
 }
