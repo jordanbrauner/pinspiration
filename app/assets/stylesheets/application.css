@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+h1, nav ul, nav li {
+  display: inline-block;
+  list-style: none;
+}
+div.pin {
+   display: inline-block;
+   border: solid 1px green;
+}
+.pin img {
+  display: block;
+  width: 200px;
+}

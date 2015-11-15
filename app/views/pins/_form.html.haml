@@ -1,0 +1,15 @@
+= form_for :pin, url: pins_path do |f|
+  - if @pin.errors.any?
+    #error_explanation
+      %h4
+        = pluralize @pin.errors.count, 'error'
+        prohibited this pin from being saved
+      %ul
+        - @pin.errors.full_messages.each do |msg|
+          %li= msg
+  .pin_form
+    = f.label :title
+    = f.text_field :title
+    = f.label :image_url
+    = f.text_field :image_url
+    = f.submit
