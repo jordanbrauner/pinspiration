@@ -5,12 +5,16 @@ class PinsController < ApplicationController
   end
 
   def new
+    @pin = Pin.new
   end
 
   def create
     @pin = Pin.new(pin_params)
-    @pin.save
-    redirect_to @pin # TODO redirect to somewhere else?
+    if @pin.save
+      redirect_to pins_path
+    else
+      render 'new'
+    end
   end
 
   def show
