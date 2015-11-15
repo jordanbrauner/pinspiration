@@ -1,6 +1,5 @@
 .pin
-  %p= link_to pin.title, pin
-  = link_to image_tag(pin.image_url), pin
+  = link_to image_tag(pin.image_url, alt: pin.title), pin
   %ul.options
     %li= link_to 'edit', edit_pin_path(pin)
     %li= link_to 'destroy', pin_path(pin), method: :delete, data: { confirm: 'Are you sure?' }

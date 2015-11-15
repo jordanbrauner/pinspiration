@@ -13,10 +13,16 @@
  *= require_tree .
  *= require_self
  */
-
+body {
+  font-family: 'Roboto', sans-serif;
+}
 h1, nav ul, nav li {
   display: inline-block;
   list-style: none;
+  text-transform: lowercase;
+}
+nav a {
+  padding: 1em;
 }
 div.pin {
    display: inline-block;

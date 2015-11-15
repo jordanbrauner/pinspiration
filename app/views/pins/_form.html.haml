@@ -2,7 +2,8 @@
   - if @pin.errors.any?
     #error_explanation
       %h4
-        = pluralize @pin.errors.count, 'error' prohibited this pin from being saved
+        = pluralize @pin.errors.count, 'error'
+        prohibited this pin from being saved
       %ul
         - @pin.errors.full_messages.each do |msg|
           %li= msg

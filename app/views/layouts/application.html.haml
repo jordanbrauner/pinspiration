@@ -1,6 +1,7 @@
 !!!
 %html
   %head
+    %link{:href => "https://fonts.googleapis.com/css?family=Roboto", :rel => "stylesheet", :type => "text/css"}/
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Pinspiration
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
@@ -11,6 +12,8 @@
       %h1 Pinsparation
       %nav
         %ul
-          %li= link_to 'Create new pin?', new_pin_path
-          %li= link_to 'See all pins?', pins_path
+          %li= link_to 'Create new pin', new_pin_path
+          %li= link_to 'Create new board', new_board_path
+          %li= link_to 'See all pins', pins_path
+          %li= link_to 'See all boards', boards_path
     = yield
