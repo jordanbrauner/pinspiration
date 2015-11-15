@@ -22,6 +22,7 @@ class PinsController < ApplicationController
   end
 
   def edit
+    @pin = Pin.find(params[:id])
   end
 
   def update
@@ -33,7 +34,10 @@ class PinsController < ApplicationController
     end
   end
 
-  def destory
+  def destroy
+    @pin = Pin.find(params[:id])
+    @pin.destroy
+    redirect_to pins_path
   end
 
   private
