@@ -23,6 +23,7 @@ class PinsController < ApplicationController
 
   def edit
     @pin = Pin.find(params[:id])
+    @boards = Board.all
   end
 
   def update

@@ -1,3 +1,3 @@
 class Board < ActiveRecord::Base
-  has_many :pins
+  has_and_belongs_to_many :pins
 end
